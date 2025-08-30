@@ -8,12 +8,14 @@
   "auth": {
     "login": "लॉगिन",
     "phone": "फोन नंबर",
-    "otp": "OTP दर्ज करें",
+    "password": "पासवर्ड",
     "verify": "सत्यापित करें",
     "welcome": "वापसी पर स्वागत है!",
     "createProfile": "प्रोफ़ाइल बनाएं",
     "name": "पूरा नाम",
-    "location": "स्थान"
+    "location": "स्थान",
+    "createAccount": "नया खाता बनाएं",
+    "loginAccount": "मौजूदा खाते में लॉगिन करें"
   },
   "dashboard": {
     "title": "डैशबोर्ड",

@@ -8,12 +8,14 @@
   "auth": {
     "login": "Login",
     "phone": "Phone Number",
-    "otp": "Enter OTP",
+    "password": "Password",
     "verify": "Verify",
     "welcome": "Welcome back!",
     "createProfile": "Create Profile",
     "name": "Full Name",
-    "location": "Location"
+    "location": "Location",
+    "createAccount": "Create a new account",
+    "loginAccount": "Login to existing account"
   },
   "dashboard": {
     "title": "Dashboard",
