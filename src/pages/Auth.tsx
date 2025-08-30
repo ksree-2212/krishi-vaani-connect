@@ -17,34 +17,50 @@ const Auth = () => {
   const { t } = useTranslation();
   const { currentLanguage } = useSelector((state: RootState) => state.language);
   
-  const [step, setStep] = useState<'phone' | 'otp' | 'profile'>('phone');
+  const [step, setStep] = useState<'phone' | 'password' | 'profile'>('phone');
   const [phone, setPhone] = useState('');
-  const [otp, setOtp] = useState('');
+  const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isNewUser, setIsNewUser] = useState(false);
 
   const handlePhoneSubmit = async () => {
     if (phone.length < 10) return;
     
     setIsLoading(true);
-    // Simulate API call
+    // Simulate checking if user exists
     setTimeout(async () => {
       setIsLoading(false);
-      setStep('otp');
-      await voiceService.speak(t('auth.otp'), currentLanguage);
+      // Mock: randomly decide if user exists
+      const userExists = Math.random() > 0.5;
+      setIsNewUser(!userExists);
+      setStep('password');
+      
+      if (userExists) {
+        await voiceService.speak('Enter your password', currentLanguage);
+      } else {
+        await voiceService.speak('Create a new password for your account', currentLanguage);
+      }
     }, 1500);
   };
 
-  const handleOtpSubmit = async () => {
-    if (otp.length < 4) return;
+  const handlePasswordSubmit = async () => {
+    if (password.length < 4) return;
     
     setIsLoading(true);
-    // Simulate API call
     setTimeout(async () => {
       setIsLoading(false);
-      setStep('profile');
-      await voiceService.speak(t('auth.createProfile'), currentLanguage);
+      
+      if (isNewUser) {
+        setStep('profile');
+        await voiceService.speak(t('auth.createProfile'), currentLanguage);
+      } else {
+        // Existing user, go directly to dashboard
+        dispatch(setUser({ phone, name: 'User', location: 'Location' }));
+        dispatch(setAuthenticated(true));
+        navigate('/dashboard');
+      }
     }, 1500);
   };
 
@@ -92,35 +108,40 @@ const Auth = () => {
               disabled={phone.length < 10 || isLoading}
               className="w-full h-12"
             >
-              {isLoading ? 'Sending...' : 'Send OTP'}
+              {isLoading ? 'Checking...' : 'Continue'}
             </Button>
           </div>
         )}
 
-        {step === 'otp' && (
+        {step === 'password' && (
           <div className="space-y-6">
+            <div className="text-center mb-4">
+              <p className="text-sm text-muted-foreground">
+                {isNewUser ? t('auth.createAccount') : t('auth.loginAccount')}
+              </p>
+            </div>
+            
             <div className="space-y-2">
-              <Label htmlFor="otp" className="flex items-center gap-2">
+              <Label htmlFor="password" className="flex items-center gap-2">
                 <Shield className="h-4 w-4" />
-                {t('auth.otp')}
+                {t('auth.password')}
               </Label>
               <Input
-                id="otp"
-                type="text"
-                placeholder="1234"
-                value={otp}
-                onChange={(e) => setOtp(e.target.value)}
-                className="h-12 text-center text-lg tracking-widest"
-                maxLength={6}
+                id="password"
+                type="password"
+                placeholder={isNewUser ? "Create password" : "Enter password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="h-12"
               />
             </div>
             
             <Button 
-              onClick={handleOtpSubmit}
-              disabled={otp.length < 4 || isLoading}
+              onClick={handlePasswordSubmit}
+              disabled={password.length < 4 || isLoading}
               className="w-full h-12"
             >
-              {isLoading ? 'Verifying...' : t('auth.verify')}
+              {isLoading ? 'Processing...' : (isNewUser ? 'Create Account' : 'Login')}
             </Button>
           </div>
         )}

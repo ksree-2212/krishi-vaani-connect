@@ -103,6 +103,41 @@ const MySoil = () => {
     return Math.min((value / max) * 100, 100);
   };
 
+  const calculateSoilHealth = (data: any) => {
+    if (!data) return 85;
+    
+    const scores = {
+      ph: data.ph >= 6.0 && data.ph <= 7.5 ? 100 : Math.abs(6.75 - data.ph) > 2 ? 40 : 70,
+      nitrogen: data.nitrogen >= 60 && data.nitrogen <= 100 ? 100 : data.nitrogen < 40 ? 50 : 80,
+      phosphorus: data.phosphorus >= 30 && data.phosphorus <= 60 ? 100 : data.phosphorus < 20 ? 50 : 80,
+      potassium: data.potassium >= 70 && data.potassium <= 100 ? 100 : data.potassium < 50 ? 50 : 80,
+      organicMatter: data.organicMatter >= 2.0 && data.organicMatter <= 5.0 ? 100 : data.organicMatter < 1 ? 40 : 70,
+      moisture: data.moisture >= 50 && data.moisture <= 80 ? 100 : data.moisture < 30 ? 40 : 70
+    };
+    
+    const average = Object.values(scores).reduce((sum, score) => sum + score, 0) / Object.values(scores).length;
+    return Math.round(average);
+  };
+
+  const getSoilRecommendations = (data: any) => {
+    if (!data) return "Enter soil data to get recommendations";
+    
+    const recommendations = [];
+    
+    if (data.ph < 6.0) recommendations.push("Add lime to increase pH");
+    if (data.ph > 7.5) recommendations.push("Add organic matter to reduce pH");
+    if (data.nitrogen < 60) recommendations.push("Apply nitrogen-rich fertilizer");
+    if (data.phosphorus < 30) recommendations.push("Add phosphate fertilizer");
+    if (data.potassium < 70) recommendations.push("Apply potash fertilizer");
+    if (data.organicMatter < 2.0) recommendations.push("Add compost or organic matter");
+    if (data.moisture < 50) recommendations.push("Improve irrigation system");
+    if (data.moisture > 80) recommendations.push("Improve drainage");
+    
+    return recommendations.length > 0 
+      ? recommendations.join(". ") + "."
+      : "Your soil is in excellent condition! Continue current practices.";
+  };
+
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="max-w-4xl mx-auto">
@@ -258,11 +293,13 @@ const MySoil = () => {
               <div className="mt-6 p-4 bg-primary/10 rounded-lg">
                 <h3 className="font-semibold text-primary mb-2">Overall Soil Health</h3>
                 <div className="flex items-center gap-2">
-                  <Progress value={85} className="flex-1" />
-                  <span className="text-success font-semibold">85%</span>
+                  <Progress value={calculateSoilHealth(soilData)} className="flex-1" />
+                  <span className={`font-semibold ${calculateSoilHealth(soilData) >= 80 ? 'text-success' : calculateSoilHealth(soilData) >= 60 ? 'text-warning' : 'text-destructive'}`}>
+                    {calculateSoilHealth(soilData)}%
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Your soil is in good condition. Consider adding organic matter to improve fertility.
+                  {getSoilRecommendations(soilData)}
                 </p>
               </div>
             </Card>

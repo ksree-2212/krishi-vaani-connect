@@ -39,7 +39,7 @@ class VoiceService {
     const languageMap: Record<Language, string[]> = {
       en: ['en-US', 'en-GB', 'en'],
       hi: ['hi-IN', 'hi'],
-      mr: ['mr-IN', 'mr'],
+      te: ['te-IN', 'te'],
       ta: ['ta-IN', 'ta'],
     };
 
@@ -60,11 +60,24 @@ class VoiceService {
         return;
       }
 
+      // Stop any ongoing speech to prevent repetition
+      this.synthesis.cancel();
+
       const utterance = new SpeechSynthesisUtterance(text);
       const voice = this.getVoiceForLanguage(language);
       
       if (voice) {
         utterance.voice = voice;
+        utterance.lang = voice.lang;
+      } else {
+        // Fallback to setting language directly
+        const langMap: Record<Language, string> = {
+          en: 'en-US',
+          hi: 'hi-IN',
+          te: 'te-IN',
+          ta: 'ta-IN',
+        };
+        utterance.lang = langMap[language];
       }
 
       utterance.rate = 0.9;
@@ -88,7 +101,7 @@ class VoiceService {
       const languageMap: Record<Language, string> = {
         en: 'en-US',
         hi: 'hi-IN',
-        mr: 'mr-IN',
+        te: 'te-IN',
         ta: 'ta-IN',
       };
 

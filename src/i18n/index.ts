@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
 import hi from './locales/hi.json';
-import mr from './locales/mr.json';
+import te from './locales/te.json';
 import ta from './locales/ta.json';
 
 i18n
@@ -11,7 +11,7 @@ i18n
     resources: {
       en: { translation: en },
       hi: { translation: hi },
-      mr: { translation: mr },
+      te: { translation: te },
       ta: { translation: ta },
     },
     lng: 'en',

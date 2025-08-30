@@ -12,7 +12,7 @@ import heroImage from '@/assets/hero-agriculture.jpg';
 const languages = [
   { code: 'en' as Language, name: 'English', nativeName: 'English' },
   { code: 'hi' as Language, name: 'Hindi', nativeName: 'हिन्दी' },
-  { code: 'mr' as Language, name: 'Marathi', nativeName: 'मराठी' },
+  { code: 'te' as Language, name: 'Telugu', nativeName: 'తెలుగు' },
   { code: 'ta' as Language, name: 'Tamil', nativeName: 'தமிழ்' },
 ];
 
@@ -27,12 +27,14 @@ const LanguageSelection = () => {
     i18n.changeLanguage(lang);
     dispatch(setLanguage(lang));
     
-    // Voice preview
-    try {
-      await voiceService.speak(t('voice.voicePreview'), lang);
-    } catch (error) {
-      console.error('Voice preview failed:', error);
-    }
+    // Voice preview with delay to ensure language is loaded
+    setTimeout(async () => {
+      try {
+        await voiceService.speak(t('voice.voicePreview'), lang);
+      } catch (error) {
+        console.error('Voice preview failed:', error);
+      }
+    }, 100);
   };
 
   const handleContinue = () => {
