@@ -1,0 +1,92 @@
+{
+  "welcome": {
+    "title": "स्मार्ट कृषि",
+    "subtitle": "AI संचालित अंतर्दृष्टि के साथ किसानों को सशक्त बनाना",
+    "chooseLanguage": "अपनी पसंदीदा भाषा चुनें",
+    "continue": "जारी रखें"
+  },
+  "auth": {
+    "login": "लॉगिन",
+    "phone": "फोन नंबर",
+    "otp": "OTP दर्ज करें",
+    "verify": "सत्यापित करें",
+    "welcome": "वापसी पर स्वागत है!",
+    "createProfile": "प्रोफ़ाइल बनाएं",
+    "name": "पूरा नाम",
+    "location": "स्थान"
+  },
+  "dashboard": {
+    "title": "डैशबोर्ड",
+    "subtitle": "एक नज़र में आपकी खेती की जानकारी",
+    "mySoil": "मेरी मिट्टी",
+    "bestCrops": "सर्वोत्तम फसलें",
+    "marketPrices": "बाजार मूल्य",
+    "smartGuidance": "स्मार्ट मार्गदर्शन",
+    "askAI": "AI से पूछें",
+    "myFarm": "मेरा खेत",
+    "offlineMode": "ऑफ़लाइन मोड",
+    "syncing": "सिंक हो रहा है..."
+  },
+  "soil": {
+    "title": "मिट्टी विश्लेषण",
+    "ph": "pH स्तर",
+    "nitrogen": "नाइट्रोजन",
+    "phosphorus": "फास्फोरस",
+    "potassium": "पोटेशियम",
+    "organicMatter": "जैविक पदार्थ",
+    "moisture": "नमी",
+    "temperature": "तापमान",
+    "testSoil": "मिट्टी परीक्षण",
+    "enterData": "डेटा मैन्युअल रूप से दर्ज करें",
+    "voiceInput": "आवाज़ इनपुट",
+    "generateReport": "रिपोर्ट जेनरेट करें"
+  },
+  "crops": {
+    "title": "फसल सिफारिशें",
+    "suitability": "उपयुक्तता",
+    "season": "मौसम",
+    "growthPeriod": "वृद्धि अवधि",
+    "waterRequirement": "पानी की आवश्यकता",
+    "expectedYield": "अपेक्षित उत्पादन",
+    "profitability": "लाभप्रदता"
+  },
+  "market": {
+    "title": "बाजार मूल्य",
+    "searchCrop": "फसल खोजें...",
+    "pricePerKg": "प्रति किलो मूल्य",
+    "change": "परिवर्तन",
+    "market": "बाजार",
+    "nearbyMarkets": "आसपास के बाजार"
+  },
+  "guidance": {
+    "title": "स्मार्ट मार्गदर्शन",
+    "dailyTips": "दैनिक सुझाव",
+    "highPriority": "उच्च प्राथमिकता",
+    "mediumPriority": "मध्यम प्राथमिकता",
+    "lowPriority": "कम प्राथमिकता"
+  },
+  "ai": {
+    "title": "AI सहायक से पूछें",
+    "listening": "सुन रहा है...",
+    "processing": "प्रोसेसिंग...",
+    "tapToSpeak": "बोलने के लिए टैप करें",
+    "typeMessage": "अपना संदेश टाइप करें...",
+    "send": "भेजें"
+  },
+  "farm": {
+    "title": "मेरे खेत का विवरण",
+    "insights": "खेत की जानकारी",
+    "nextActions": "अगली कार्रवाइयां",
+    "soilHealth": "मिट्टी का स्वास्थ्य",
+    "cropStatus": "फसल की स्थिति",
+    "marketTrends": "बाजार के रुझान",
+    "weatherAlert": "मौसम चेतावनी"
+  },
+  "voice": {
+    "tapToChoose": "अपनी भाषा चुनने के लिए टैप करें",
+    "voicePreview": "इस भाषा में मैं इस तरह बोलता हूं",
+    "speechNotSupported": "वाक् संश्लेषण समर्थित नहीं है",
+    "listeningError": "भाषण सुनने में त्रुटि",
+    "speakingError": "टेक्स्ट बोलने में त्रुटि"
+  }
+}

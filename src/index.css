@@ -8,33 +8,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Agriculture-themed color palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 120 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 120 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 120 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Rich forest green */
+    --primary: 120 60% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 120 50% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Warm earth brown */
+    --secondary: 25 30% 20%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Light sage */
+    --muted: 120 20% 95%;
+    --muted-foreground: 120 15% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Golden wheat */
+    --accent: 45 90% 60%;
+    --accent-foreground: 45 90% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success: Fresh green */
+    --success: 120 70% 40%;
+    --success-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning: Sunset orange */
+    --warning: 25 95% 55%;
+    --warning-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 20% 90%;
+    --input: 120 20% 95%;
+    --ring: 120 60% 25%;
+
+    /* Agriculture-specific colors */
+    --soil: 25 40% 45%;
+    --crop: 120 50% 45%;
+    --harvest: 45 85% 55%;
+    --water: 200 80% 55%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--soil)), hsl(var(--harvest)));
+    --gradient-nature: linear-gradient(135deg, hsl(var(--crop)), hsl(var(--accent)));
+    --gradient-sky: linear-gradient(180deg, hsl(200 80% 70%), hsl(200 60% 85%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -8px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.4);
+    --shadow-depth: 0 10px 40px -15px hsl(120 20% 20% / 0.3);
 
     --radius: 0.5rem;
 
@@ -56,33 +87,54 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 120 15% 8%;
+    --foreground: 120 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 120 15% 10%;
+    --card-foreground: 120 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 120 15% 10%;
+    --popover-foreground: 120 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 120 50% 45%;
+    --primary-foreground: 120 15% 8%;
+    --primary-glow: 120 40% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 25% 15%;
+    --secondary-foreground: 120 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 80% 55%;
+    --accent-foreground: 45 90% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 120 60% 45%;
+    --success-foreground: 120 15% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --warning: 25 85% 50%;
+    --warning-foreground: 25 90% 10%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 10% 20%;
+    --input: 120 10% 15%;
+    --ring: 120 50% 45%;
+
+    --soil: 25 35% 40%;
+    --crop: 120 40% 40%;
+    --harvest: 45 75% 50%;
+    --water: 200 70% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--soil)), hsl(var(--harvest)));
+    --gradient-nature: linear-gradient(135deg, hsl(var(--crop)), hsl(var(--accent)));
+    --gradient-sky: linear-gradient(180deg, hsl(200 60% 30%), hsl(200 40% 45%));
+
+    --shadow-soft: 0 4px 20px -8px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+    --shadow-depth: 0 10px 40px -15px hsl(0 0% 0% / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

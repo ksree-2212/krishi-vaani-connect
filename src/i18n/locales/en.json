@@ -1,0 +1,92 @@
+{
+  "welcome": {
+    "title": "Smart Agriculture",
+    "subtitle": "Empowering farmers with AI-driven insights",
+    "chooseLanguage": "Choose your preferred language",
+    "continue": "Continue"
+  },
+  "auth": {
+    "login": "Login",
+    "phone": "Phone Number",
+    "otp": "Enter OTP",
+    "verify": "Verify",
+    "welcome": "Welcome back!",
+    "createProfile": "Create Profile",
+    "name": "Full Name",
+    "location": "Location"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Your farm insights at a glance",
+    "mySoil": "My Soil",
+    "bestCrops": "Best Crops",
+    "marketPrices": "Market Prices",
+    "smartGuidance": "Smart Guidance",
+    "askAI": "Ask AI",
+    "myFarm": "My Farm",
+    "offlineMode": "Offline Mode",
+    "syncing": "Syncing..."
+  },
+  "soil": {
+    "title": "Soil Analysis",
+    "ph": "pH Level",
+    "nitrogen": "Nitrogen",
+    "phosphorus": "Phosphorus",
+    "potassium": "Potassium",
+    "organicMatter": "Organic Matter",
+    "moisture": "Moisture",
+    "temperature": "Temperature",
+    "testSoil": "Test Soil",
+    "enterData": "Enter Data Manually",
+    "voiceInput": "Voice Input",
+    "generateReport": "Generate Report"
+  },
+  "crops": {
+    "title": "Crop Recommendations",
+    "suitability": "Suitability",
+    "season": "Season",
+    "growthPeriod": "Growth Period",
+    "waterRequirement": "Water Requirement",
+    "expectedYield": "Expected Yield",
+    "profitability": "Profitability"
+  },
+  "market": {
+    "title": "Market Prices",
+    "searchCrop": "Search crop...",
+    "pricePerKg": "Price per kg",
+    "change": "Change",
+    "market": "Market",
+    "nearbyMarkets": "Nearby Markets"
+  },
+  "guidance": {
+    "title": "Smart Guidance",
+    "dailyTips": "Daily Tips",
+    "highPriority": "High Priority",
+    "mediumPriority": "Medium Priority",
+    "lowPriority": "Low Priority"
+  },
+  "ai": {
+    "title": "Ask AI Assistant",
+    "listening": "Listening...",
+    "processing": "Processing...",
+    "tapToSpeak": "Tap to speak",
+    "typeMessage": "Type your message...",
+    "send": "Send"
+  },
+  "farm": {
+    "title": "My Farm Overview",
+    "insights": "Farm Insights",
+    "nextActions": "Next Actions",
+    "soilHealth": "Soil Health",
+    "cropStatus": "Crop Status",
+    "marketTrends": "Market Trends",
+    "weatherAlert": "Weather Alert"
+  },
+  "voice": {
+    "tapToChoose": "Tap to choose your language",
+    "voicePreview": "This is how I sound in this language",
+    "speechNotSupported": "Speech synthesis not supported",
+    "listeningError": "Error listening to speech",
+    "speakingError": "Error speaking text"
+  }
+}
